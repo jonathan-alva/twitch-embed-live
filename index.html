@@ -6,9 +6,6 @@
   </head>
   <body>
 
-    <p>Get the code for this example on <a href="https://github.com/BarryCarlyon/twitch_misc/tree/main/player/html">Github</a> or just View the source instead</p>
-
-
 <div id="test"></div>
 
 <div id="controls">
@@ -39,7 +36,7 @@
 
 <br />
 
-    <input type="text" id="channel" value="monstercat" />
+    <input type="text" id="channel" value="joo_nathan" />
     <button id="change">Change Channel</button>
 
     <select id="quality"></select>
@@ -56,6 +53,9 @@
 <script type="text/javascript">
 const urlParams = new URLSearchParams(window.location.search);
 const runtest = urlParams.get('test');
+const user = urlParams.get('user');
+
+document.getElementById("channel").value = user;
 
   var options = {
     width: 800,
