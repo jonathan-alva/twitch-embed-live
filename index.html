@@ -53,16 +53,13 @@
 <script type="text/javascript">
 const urlParams = new URLSearchParams(window.location.search);
 const runtest = urlParams.get('test');
-const user = urlParams.get('user');
-
-document.getElementById("channel").value = user;
 
   var options = {
     width: 800,
     height: 500,
-    channel: "asot",
+    channel: user,
     allowfullscreen: false,
-    layout: 'video-with-chat'
+    layout: 'video'
   };
   var player = new Twitch.Embed("test", options);
 
