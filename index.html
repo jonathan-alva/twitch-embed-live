@@ -3,6 +3,11 @@
     <title>Twitch Embed example</title>
     <script src= "https://embed.twitch.tv/embed/v1.js"></script>
     <link rel="stylesheet" href="/twitch_misc/style.css" />
+	<style>
+		.top-bar {
+			display: none !important;
+		}
+	</style>
   </head>
   <body>
 
@@ -45,7 +50,7 @@
     <button id="quality_get">Get Quality</button>
 </div>
 
-<div style="width: 800px; position: relative;">
+<div style="width: 800px; position: relative;" class="controls-data">
   <div id="log"></div>
   <div id="logb" style="position: absolute; top: 0px; right: 0px;"></div>
 </div>
@@ -54,7 +59,12 @@
 const urlParams = new URLSearchParams(window.location.search);
 const runtest = urlParams.get('test');
 const user = urlParams.get('user');
+const controlHide = urlParams.get('ishide');
 
+if (controlHide) {
+	document.getElementById("controls").style.display = "none";
+	document.getElementById("controls-data").style.display = "none";
+}
 
   var options = {
     width: 800,
